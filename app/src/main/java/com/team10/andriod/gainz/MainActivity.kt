@@ -1,33 +1,42 @@
 package com.team10.andriod.gainz
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.android.volley.Request
-import com.android.volley.toolbox.JsonObjectRequest
-import com.android.volley.toolbox.Volley
+import androidx.appcompat.app.AppCompatActivity
+import com.team10.andriod.gainz.api.WorkoutResponse
+import com.team10.andriod.gainz.api.WorkoutService
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
-    loadWorkouts()
-  }
 
-  private fun loadWorkouts() {
-    val queue = Volley.newRequestQueue(this)
-    val url = BuildConfig.BASE_API + "workout/get-all?limit=3"
+    val retrofit = Retrofit.Builder()
+      .baseUrl(BuildConfig.BASE_API)
+      .addConverterFactory(GsonConverterFactory.create())
+      .build()
 
-    val jsonObjectRequest = JsonObjectRequest(
-      Request.Method.GET, url, null,
-      { response ->
-        val result = response.toString()
-        Log.d("data", result)
-      },
-      { error ->
-        Log.e("error", error.toString())
+    val service = retrofit.create(WorkoutService::class.java)
+    val call = service.getAll(3, null)
+    call.enqueue(object : Callback<WorkoutResponse> {
+      override fun onResponse(call: Call<WorkoutResponse>?, response: Response<WorkoutResponse>?) {
+        if (response?.code() == 200) {
+          val workoutResponse = response.body()!!
+          for (workout in workoutResponse.results) {
+            Log.d("MainActivity", workout.toString())
+          }
+        }
       }
-    )
-    queue.add(jsonObjectRequest)
+
+      override fun onFailure(call: Call<WorkoutResponse>?, t: Throwable?) {
+        TODO("Not yet implemented")
+      }
+
+    })
   }
 }
