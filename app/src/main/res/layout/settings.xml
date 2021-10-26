@@ -15,7 +15,7 @@
         android:layout_marginEnd="73dp"
         android:gravity="center"
         android:labelFor="@id/editheightinches"
-        android:text="''"
+        android:text="@string/incheslabel"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
         android:typeface="sans"
@@ -30,7 +30,7 @@
         android:layout_marginTop="68dp"
         android:gravity="center"
         android:labelFor="@id/editheightfeet"
-        android:text="'"
+        android:text="@string/feetlabel"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
         android:typeface="sans"
@@ -45,7 +45,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="136dp"
         android:gravity="center_horizontal|center_vertical"
-        android:text="Settings"
+        android:text="@string/settingslabel"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +59,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="60dp"
         android:gravity="center"
-        android:text="Height"
+        android:text="@string/heightlabel"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
         android:typeface="sans"
@@ -73,7 +73,7 @@
         android:layout_marginStart="50dp"
         android:layout_marginTop="35dp"
         android:gravity="center"
-        android:text="Weight"
+        android:text="@string/weightlabel"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
         android:typeface="sans"
@@ -88,7 +88,7 @@
         android:layout_marginTop="88dp"
         android:layout_marginEnd="20dp"
         android:gravity="center"
-        android:text="Select Goal"
+        android:text="@string/selectgoallabel"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
         android:typeface="sans"
@@ -104,7 +104,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="104dp"
         android:gravity="center"
-        android:text="Select Workout Days"
+        android:text="@string/workoutdayslabel"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
         android:typeface="sans"
@@ -120,7 +120,7 @@
         android:layout_marginEnd="50dp"
         android:gravity="center"
         android:labelFor="@id/editweight"
-        android:text="lbs"
+        android:text="@string/poundslabel"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#FFFFFF"
         android:typeface="sans"
@@ -135,7 +135,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:background="?attr/colorSecondaryVariant"
-        android:contentDescription="home"
+        android:contentDescription="@string/homebuttondescription"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_baseline_home_24" />
@@ -251,21 +251,21 @@
             android:id="@+id/fatlossradio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Fat loss"
+            android:text="@string/fatlossradio"
             android:textColor="#FFFFFF" />
 
         <RadioButton
             android:id="@+id/musclebuildingradio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Muscle building"
+            android:text="@string/musclebuildingradio"
             android:textColor="#FFFFFF" />
 
         <RadioButton
             android:id="@+id/strengthradio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Strength"
+            android:text="@string/strengthradio"
             android:textColor="#FFFFFF" />
     </RadioGroup>
 
@@ -273,7 +273,7 @@
         android:id="@+id/tuesdaybox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="T"
+        android:text="@string/tuesdayradio"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/wednesdaybox"
         app:layout_constraintTop_toBottomOf="@+id/workoutdayslabel" />
@@ -282,7 +282,7 @@
         android:id="@+id/wednesdaybox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="W"
+        android:text="@string/wednesdayradio"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/thursdaybox"
         app:layout_constraintTop_toBottomOf="@+id/workoutdayslabel" />
@@ -291,7 +291,7 @@
         android:id="@+id/thursdaybox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Th"
+        android:text="@string/thursdayradio"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/fridaybox"
         app:layout_constraintTop_toBottomOf="@+id/workoutdayslabel" />
@@ -300,7 +300,7 @@
         android:id="@+id/fridaybox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="F"
+        android:text="@string/fridayradio"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/saturdaybox"
         app:layout_constraintTop_toBottomOf="@+id/workoutdayslabel" />
@@ -309,7 +309,7 @@
         android:id="@+id/saturdaybox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sa"
+        android:text="@string/saturdayradio"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/sundaybox"
         app:layout_constraintTop_toBottomOf="@+id/workoutdayslabel" />
@@ -319,7 +319,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="37dp"
-        android:text="Su"
+        android:text="@string/sundayradio"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/workoutdayslabel" />
@@ -329,7 +329,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="37dp"
-        android:text="M"
+        android:text="@string/mondayradio"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toStartOf="@+id/tuesdaybox"
         app:layout_constraintStart_toStartOf="parent"
