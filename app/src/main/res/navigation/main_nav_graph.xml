@@ -5,6 +5,6 @@
 
     <fragment
         android:id="@+id/nav_flow"
-        android:name="com.team10.andriod.gainz.ui.flow.FlowPagingSourceFragment"
+        android:name="com.team10.android.gainz.ui.flow.FlowPagingSourceFragment"
         android:label="FlowPagingSource" />
 </navigation>
