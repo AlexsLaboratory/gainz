@@ -1,3 +1,5 @@
 <resources>
   <string name="app_name">Gainz</string>
+  <string name="flow">Flow</string>
+  <string name="workout_list_label">Workouts</string>
 </resources>
