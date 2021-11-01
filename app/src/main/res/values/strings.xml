@@ -1,6 +1,7 @@
 <resources>
   <string name="app_name">Gainz</string>
-    <string name="nextworkoutlabel">Tomorrow\'s Workout</string>
+  <string name="workout_list_label">Workouts</string>
+  <string name="nextworkoutlabel">Tomorrow\'s Workout</string>
   <string name="currentworkoutlabel">Today\'s Workout</string>
   <string name="settingsbuttondescription">settings menu</string>
   <string name="incheslabel">\'\'</string>

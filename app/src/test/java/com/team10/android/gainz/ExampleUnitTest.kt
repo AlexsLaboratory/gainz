@@ -1,4 +1,4 @@
-package com.team10.andriod.gainz
+package com.team10.android.gainz
 
 import org.junit.Test
 
