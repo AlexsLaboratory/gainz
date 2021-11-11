@@ -9,18 +9,28 @@
         <entry key="..\:/Users/LoweM/Desktop/Github Projects/gainz/app/src/main/res/drawable/ic_launcher_background.xml" value="0.4552083333333333" />
         <entry key="..\:/Users/LoweM/Desktop/Github Projects/gainz/app/src/main/res/layout/activity_main.xml" value="0.3193768257059396" />
         <entry key="..\:/Users/LoweM/Desktop/Github Projects/gainz/app/src/main/res/layout/activity_main2.xml" value="0.13333333333333333" />
+        <entry key="..\:/Users/LoweM/Desktop/Github Projects/gainz/app/src/main/res/layout/app_bar_main.xml" value="0.36025641025641025" />
+        <entry key="..\:/Users/LoweM/Desktop/Github Projects/gainz/app/src/main/res/layout/content_main.xml" value="0.36025641025641025" />
         <entry key="..\:/Users/LoweM/Desktop/Github Projects/gainz/app/src/main/res/layout/flow_paging_source_binding_fragment.xml" value="0.425" />
         <entry key="..\:/Users/LoweM/Desktop/Github Projects/gainz/app/src/main/res/layout/flow_paging_source_fragment.xml" value="0.4390625" />
         <entry key="..\:/Users/LoweM/Desktop/Github Projects/gainz/app/src/main/res/layout/fragment_flow_paging_source.xml" value="0.3538135593220339" />
         <entry key="..\:/Users/LoweM/Desktop/Github Projects/gainz/app/src/main/res/layout/fragment_flow_remote_mediator.xml" value="0.4390625" />
+        <entry key="..\:/Users/LoweM/Desktop/Github Projects/gainz/app/src/main/res/layout/fragment_gallery.xml" value="0.36025641025641025" />
+        <entry key="..\:/Users/LoweM/Desktop/Github Projects/gainz/app/src/main/res/layout/fragment_home.xml" value="0.36025641025641025" />
         <entry key="..\:/Users/LoweM/Desktop/Github Projects/gainz/app/src/main/res/layout/fragment_item.xml" value="0.13333333333333333" />
         <entry key="..\:/Users/LoweM/Desktop/Github Projects/gainz/app/src/main/res/layout/fragment_item_list.xml" value="0.264" />
+        <entry key="..\:/Users/LoweM/Desktop/Github Projects/gainz/app/src/main/res/layout/fragment_slideshow.xml" value="0.36025641025641025" />
+        <entry key="..\:/Users/LoweM/Desktop/Github Projects/gainz/app/src/main/res/layout/home.xml" value="0.36025641025641025" />
         <entry key="..\:/Users/LoweM/Desktop/Github Projects/gainz/app/src/main/res/layout/main_fragment.xml" value="0.4390625" />
+        <entry key="..\:/Users/LoweM/Desktop/Github Projects/gainz/app/src/main/res/layout/nav_header.xml" value="0.36025641025641025" />
+        <entry key="..\:/Users/LoweM/Desktop/Github Projects/gainz/app/src/main/res/layout/nav_header_main.xml" value="0.36025641025641025" />
         <entry key="..\:/Users/LoweM/Desktop/Github Projects/gainz/app/src/main/res/layout/settings.xml" value="0.14017094017094017" />
         <entry key="..\:/Users/LoweM/Desktop/Github Projects/gainz/app/src/main/res/layout/workout_fragment.xml" value="0.264" />
         <entry key="..\:/Users/LoweM/Desktop/Github Projects/gainz/app/src/main/res/layout/workout_list_view.xml" value="0.1" />
         <entry key="..\:/Users/LoweM/Desktop/Github Projects/gainz/app/src/main/res/layout/workouts_list.xml" value="0.13333333333333333" />
         <entry key="..\:/Users/LoweM/Desktop/Github Projects/gainz/app/src/main/res/menu/bottom_nav_menu.xml" value="0.4" />
+        <entry key="..\:/Users/LoweM/Desktop/Github Projects/gainz/app/src/main/res/menu/nav_drawer_menu.xml" value="0.36025641025641025" />
+        <entry key="..\:/Users/LoweM/Desktop/Github Projects/gainz/app/src/main/res/menu/nav_header_menu.xml" value="0.36025641025641025" />
       </map>
     </option>
   </component>

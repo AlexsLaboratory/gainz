@@ -28,4 +28,7 @@
   <string name="dateyear">2021</string>
   <string name="datedate">03 Oct</string>
   <string name="currentworkoutbutton">Chest Day</string>
+    <string name="workouts">Workouts</string>
+    <string name="open">Open</string>
+  <string name="close">Close</string>
 </resources>
