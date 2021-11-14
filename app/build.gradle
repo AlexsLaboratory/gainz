@@ -3,7 +3,25 @@ plugins {
   id 'kotlin-android'
 }
 
+def urlPropertiesFile = rootProject.file("url.properties")
+def urlProperties = new Properties()
+urlProperties.load(new FileInputStream(urlPropertiesFile))
+
 android {
+  signingConfigs {
+    debug {
+      storeFile file('C:\\Users\\LoweM\\gainz.jks')
+      storePassword storepass
+      keyPassword keypass
+      keyAlias 'key0'
+    }
+    main {
+      storeFile file('C:\\Users\\LoweM\\gainz.jks')
+      storePassword storepass
+      keyPassword keypass
+      keyAlias 'key0'
+    }
+  }
   compileSdkVersion 30
   buildToolsVersion "30.0.3"
 
@@ -17,14 +35,20 @@ android {
     targetSdkVersion 30
     versionCode 1
     versionName "1.0"
-
     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    signingConfig signingConfigs.main
   }
 
   buildTypes {
-    release {
+    development {
       minifyEnabled false
       proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+      buildConfigField "String", "API_URL", "\"https://afternoon-dawn-65870.herokuapp.com/\""
+    }
+
+    debug {
+      debuggable true
+      buildConfigField "String", "API_URL", urlProperties["API_URL"]
     }
   }
   compileOptions {

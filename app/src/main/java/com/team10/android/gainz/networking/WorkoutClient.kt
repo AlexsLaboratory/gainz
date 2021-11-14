@@ -1,11 +1,12 @@
 package com.team10.android.gainz.networking
 
+import com.team10.android.gainz.BuildConfig
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 class WorkoutClient {
   companion object {
-    private const val BASE_URL = "https://afternoon-dawn-65870.herokuapp.com/"
+    private const val BASE_URL = BuildConfig.API_URL
     private var workoutService: WorkoutService? = null
 
     fun getClient(): WorkoutService {
