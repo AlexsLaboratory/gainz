@@ -5,7 +5,7 @@ import androidx.paging.PagingState
 import com.team10.android.gainz.models.WorkoutPaging
 import com.team10.android.gainz.models.WorkoutResponse
 import com.team10.android.gainz.models.WorkoutResponseMapper
-import com.team10.android.gainz.networking.WorkoutService
+import com.team10.android.gainz.networking.workout.WorkoutService
 
 class WorkoutFlowPagingSource(private val workoutService: WorkoutService) :
   PagingSource<Int, WorkoutPaging.Data>(), WorkoutResponseMapper<WorkoutResponse, WorkoutPaging> {

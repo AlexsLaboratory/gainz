@@ -1,4 +1,4 @@
-package com.team10.android.gainz.networking
+package com.team10.android.gainz.networking.workout
 
 import com.team10.android.gainz.BuildConfig
 import retrofit2.Retrofit

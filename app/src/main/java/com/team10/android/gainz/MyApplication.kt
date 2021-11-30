@@ -1,8 +1,8 @@
 package com.team10.android.gainz
 
 import android.app.Application
-import com.team10.android.gainz.networking.WorkoutClient
-import com.team10.android.gainz.networking.WorkoutService
+import com.team10.android.gainz.networking.workout.WorkoutClient
+import com.team10.android.gainz.networking.workout.WorkoutService
 
 class MyApplication: Application() {
   lateinit var workoutService: WorkoutService

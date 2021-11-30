@@ -1,4 +1,4 @@
-package com.team10.android.gainz.networking
+package com.team10.android.gainz.networking.workout
 
 import com.team10.android.gainz.models.WorkoutResponse
 import retrofit2.http.GET
