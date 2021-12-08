@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import com.team10.android.gainz.models.LoginUserRequest
 import com.team10.android.gainz.models.LoginUserResponse
 import com.team10.android.gainz.networking.APIClient
+import com.team10.android.gainz.utils.SessionManager
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -20,9 +21,11 @@ class LoginFragment : Fragment() {
   private lateinit var email: EditText
   private lateinit var password: EditText
   private lateinit var loginBtn: Button
+  private lateinit var sessionManager: SessionManager
 
   override fun onAttach(context: Context) {
     super.onAttach(context)
+    sessionManager = SessionManager(requireContext())
   }
 
   override fun onCreateView(
@@ -56,6 +59,7 @@ class LoginFragment : Fragment() {
         if (response.isSuccessful) {
           val message = "Successful..."
           Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
+          sessionManager.saveAuthToken(response.body()?.token)
         } else {
           val message = "Unable to login"
           Toast.makeText(context, message, Toast.LENGTH_SHORT).show()

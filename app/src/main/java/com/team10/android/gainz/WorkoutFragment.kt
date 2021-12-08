@@ -1,5 +1,6 @@
 package com.team10.android.gainz
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import com.team10.android.gainz.repository.flow.WorkoutFlowRepositoryImpl
 import com.team10.android.gainz.repository.paging.WorkoutFlowPagingSource
 import com.team10.android.gainz.ui.adapter.WorkoutPagingDataAdapter
 import com.team10.android.gainz.ui.flow.viewModel.WorkoutViewModel
+import com.team10.android.gainz.utils.SessionManager
 import com.team10.android.gainz.utils.ViewModelProviderFactory
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -23,9 +25,15 @@ class WorkoutFragment : Fragment() {
   private lateinit var repository: WorkoutFlowRepositoryImpl
   private lateinit var pagingSource: WorkoutFlowPagingSource
   private lateinit var pagingDataAdapter: WorkoutPagingDataAdapter
+  private lateinit var sessionManager: SessionManager
 
   companion object {
     fun newInstance() = WorkoutFragment()
+  }
+
+  override fun onAttach(context: Context) {
+    super.onAttach(context)
+    sessionManager = SessionManager(requireContext())
   }
 
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,6 +52,7 @@ class WorkoutFragment : Fragment() {
         (requireActivity().application as MyApplication)
           .workoutService
       )
+    pagingSource.token = sessionManager.getAuthToken()
     repository = WorkoutFlowRepositoryImpl(pagingSource)
     pagingDataAdapter = WorkoutPagingDataAdapter()
     binding.workoutRecyclerView.apply {
