@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
 
     val workoutFragment = WorkoutFragment()
     val registerFragment = RegisterFragment()
+    val loginFragment = LoginFragment()
 
     supportActionBar?.setDisplayHomeAsUpEnabled(true)
     navigationView = findViewById(R.id.nav_view)
@@ -34,6 +35,11 @@ class MainActivity : AppCompatActivity() {
         }
         R.id.registerItem -> supportFragmentManager.beginTransaction().apply {
           replace(R.id.fragment_container_view, registerFragment)
+            .addToBackStack(null)
+            .commit()
+        }
+        R.id.loginItem -> supportFragmentManager.beginTransaction().apply {
+          replace(R.id.fragment_container_view, loginFragment)
             .addToBackStack(null)
             .commit()
         }
