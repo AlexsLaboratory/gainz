@@ -28,7 +28,23 @@
   <string name="dateyear">2021</string>
   <string name="datedate">03 Oct</string>
   <string name="currentworkoutbutton">Chest Day</string>
-    <string name="workouts">Workouts</string>
-    <string name="open">Open</string>
+  <string name="workouts">Workouts</string>
+  <string name="open">Open</string>
   <string name="close">Close</string>
+
+  <!-- Strings related to register -->
+  <string name="prompt_email">Email</string>
+  <string name="prompt_password">Password</string>
+  <string name="action_register">Register</string>
+  <string name="action_register_short">Register</string>
+  <string name="name_register">Name</string>
+  <string name="register_name">Name</string>
+
+  <!-- Strings related to login -->
+  <string name="action_login">Login</string>
+  <string name="action_login_short">Login</string>
+  <string name="hello_blank_fragment">Hello blank fragment</string>
+  <string name="register">Register</string>
+  <string name="login">Login</string>
+  <string name="prompt_name">Name</string>
 </resources>
