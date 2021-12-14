@@ -19,4 +19,9 @@ class SessionManager(context: Context) {
   fun getAuthToken(): String? {
     return preferences.getString(USER_TOKEN, null)
   }
+
+  fun deleteAuthToken() {
+    editor.remove(USER_TOKEN)
+    editor.apply()
+  }
 }

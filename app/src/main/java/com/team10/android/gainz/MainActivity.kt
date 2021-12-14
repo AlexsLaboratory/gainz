@@ -6,6 +6,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
+import com.team10.android.gainz.utils.SessionManager
 
 class MainActivity : AppCompatActivity() {
   private lateinit var toggle: ActionBarDrawerToggle
@@ -42,6 +43,9 @@ class MainActivity : AppCompatActivity() {
           replace(R.id.fragment_container_view, loginFragment)
             .addToBackStack(null)
             .commit()
+        }
+        R.id.logOut -> {
+          SessionManager(applicationContext).deleteAuthToken()
         }
       }
       true
