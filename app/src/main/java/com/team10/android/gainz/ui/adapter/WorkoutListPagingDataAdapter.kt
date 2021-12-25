@@ -4,25 +4,25 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.team10.android.gainz.databinding.WorkoutListViewBinding
+import com.team10.android.gainz.databinding.WorkoutListItemBinding
 import com.team10.android.gainz.models.WorkoutPaging
 import com.team10.android.gainz.utils.DiffUtilCallBack
 
-class WorkoutPagingDataAdapter() :
-  PagingDataAdapter<WorkoutPaging.Data, WorkoutPagingDataAdapter.WorkoutViewHolder>(DiffUtilCallBack()) {
+class WorkoutListPagingDataAdapter() :
+  PagingDataAdapter<WorkoutPaging.Data, WorkoutListPagingDataAdapter.WorkoutListViewHolder>(DiffUtilCallBack()) {
 
-  override fun onBindViewHolder(holder: WorkoutViewHolder, position: Int) {
+  override fun onBindViewHolder(holder: WorkoutListViewHolder, position: Int) {
     getItem(position)?.let {
       holder.onBind(it)
     }
   }
 
-  override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WorkoutViewHolder {
-    val binding = WorkoutListViewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-    return WorkoutViewHolder(binding)
+  override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WorkoutListViewHolder {
+    val binding = WorkoutListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+    return WorkoutListViewHolder(binding)
   }
 
-  class WorkoutViewHolder(val binding: WorkoutListViewBinding) :
+  class WorkoutListViewHolder(private val binding: WorkoutListItemBinding) :
     RecyclerView.ViewHolder(binding.root) {
     fun onBind(data: WorkoutPaging.Data) {
       binding.workoutId.text = data.id.toString()

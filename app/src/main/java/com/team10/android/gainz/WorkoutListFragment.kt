@@ -9,26 +9,26 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.team10.android.gainz.databinding.WorkoutFragmentBinding
+import com.team10.android.gainz.databinding.WorkoutListFragmentBinding
 import com.team10.android.gainz.repository.flow.WorkoutFlowRepositoryImpl
 import com.team10.android.gainz.repository.paging.WorkoutFlowPagingSource
-import com.team10.android.gainz.ui.adapter.WorkoutPagingDataAdapter
+import com.team10.android.gainz.ui.adapter.WorkoutListPagingDataAdapter
 import com.team10.android.gainz.ui.flow.viewModel.WorkoutViewModel
 import com.team10.android.gainz.utils.SessionManager
 import com.team10.android.gainz.utils.ViewModelProviderFactory
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
-class WorkoutFragment : Fragment() {
-  private lateinit var binding: WorkoutFragmentBinding
+class WorkoutListFragment : Fragment() {
+  private lateinit var binding: WorkoutListFragmentBinding
   private lateinit var viewModel: WorkoutViewModel
   private lateinit var repository: WorkoutFlowRepositoryImpl
   private lateinit var pagingSource: WorkoutFlowPagingSource
-  private lateinit var pagingDataAdapter: WorkoutPagingDataAdapter
+  private lateinit var pagingDataAdapter: WorkoutListPagingDataAdapter
   private lateinit var sessionManager: SessionManager
 
   companion object {
-    fun newInstance() = WorkoutFragment()
+    fun newInstance() = WorkoutListFragment()
   }
 
   override fun onAttach(context: Context) {
@@ -46,7 +46,7 @@ class WorkoutFragment : Fragment() {
     container: ViewGroup?,
     savedInstanceState: Bundle?
   ): View {
-    binding = WorkoutFragmentBinding.inflate(layoutInflater)
+    binding = WorkoutListFragmentBinding.inflate(layoutInflater)
     pagingSource =
       WorkoutFlowPagingSource(
         (requireActivity().application as MyApplication)
@@ -54,7 +54,7 @@ class WorkoutFragment : Fragment() {
       )
     pagingSource.token = sessionManager.getAuthToken()
     repository = WorkoutFlowRepositoryImpl(pagingSource)
-    pagingDataAdapter = WorkoutPagingDataAdapter()
+    pagingDataAdapter = WorkoutListPagingDataAdapter()
     binding.workoutRecyclerView.apply {
       layoutManager = LinearLayoutManager(context)
       adapter = pagingDataAdapter

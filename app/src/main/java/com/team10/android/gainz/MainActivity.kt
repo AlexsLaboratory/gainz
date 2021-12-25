@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     drawerLayout.addDrawerListener(toggle)
     toggle.syncState()
 
-    val workoutFragment = WorkoutFragment()
+    val workoutFragment = WorkoutListFragment()
     val registerFragment = RegisterFragment()
     val loginFragment = LoginFragment()
 
