@@ -5,13 +5,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.team10.android.gainz.databinding.WorkoutListFragmentBinding
+import com.team10.android.gainz.models.WorkoutPaging
 import com.team10.android.gainz.repository.flow.WorkoutFlowRepositoryImpl
 import com.team10.android.gainz.repository.paging.WorkoutFlowPagingSource
+import com.team10.android.gainz.ui.adapter.OnWorkoutClickListener
 import com.team10.android.gainz.ui.adapter.WorkoutListPagingDataAdapter
 import com.team10.android.gainz.ui.flow.viewModel.WorkoutViewModel
 import com.team10.android.gainz.utils.SessionManager
@@ -19,7 +22,7 @@ import com.team10.android.gainz.utils.ViewModelProviderFactory
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
-class WorkoutListFragment : Fragment() {
+class WorkoutListFragment : Fragment(), OnWorkoutClickListener {
   private lateinit var binding: WorkoutListFragmentBinding
   private lateinit var viewModel: WorkoutViewModel
   private lateinit var repository: WorkoutFlowRepositoryImpl
@@ -54,7 +57,7 @@ class WorkoutListFragment : Fragment() {
       )
     pagingSource.token = sessionManager.getAuthToken()
     repository = WorkoutFlowRepositoryImpl(pagingSource)
-    pagingDataAdapter = WorkoutListPagingDataAdapter()
+    pagingDataAdapter = WorkoutListPagingDataAdapter(this)
     binding.workoutRecyclerView.apply {
       layoutManager = LinearLayoutManager(context)
       adapter = pagingDataAdapter
@@ -77,5 +80,9 @@ class WorkoutListFragment : Fragment() {
           pagingDataAdapter.submitData(lifecycle, it)
         }
     }
+  }
+
+  override fun onWorkoutClick(workout: WorkoutPaging.Data) {
+    Toast.makeText(requireActivity(),"${workout.id} is the ID of the workout clicked", Toast.LENGTH_SHORT).show()
   }
 }
