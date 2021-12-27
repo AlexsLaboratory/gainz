@@ -1,36 +1,15 @@
 <resources>
   <string name="app_name">Gainz</string>
+
+  <!-- String related to workout list -->
   <string name="workout_list_label">Workouts</string>
-  <string name="nextworkoutlabel">Tomorrow\'s Workout</string>
-  <string name="currentworkoutlabel">Today\'s Workout</string>
-  <string name="settingsbuttondescription">settings menu</string>
-  <string name="incheslabel">\'\'</string>
-  <string name="feetlabel">\'</string>
-  <string name="settingslabel">Settings</string>
-  <string name="heightlabel">Height</string>
-  <string name="weightlabel">Weight</string>
-  <string name="selectgoallabel">Select Goal</string>
-  <string name="workoutdayslabel">Select Workout Days</string>
-  <string name="poundslabel">lbs</string>
-  <string name="homebuttondescription">home</string>
-  <string name="fatlossradio">Fat loss</string>
-  <string name="musclebuildingradio">Muscle building</string>
-  <string name="strengthradio">Strength</string>
-  <string name="tuesdayradio">T</string>
-  <string name="wednesdayradio">W</string>
-  <string name="thursdayradio">Th</string>
-  <string name="fridayradio">F</string>
-  <string name="saturdayradio">Sa</string>
-  <string name="sundayradio">Su</string>
-  <string name="mondayradio">M</string>
-  <string name="nextworkoutbutton">Leg Day</string>
-  <string name="dateday">Sunday</string>
-  <string name="dateyear">2021</string>
-  <string name="datedate">03 Oct</string>
-  <string name="currentworkoutbutton">Chest Day</string>
   <string name="workouts">Workouts</string>
   <string name="open">Open</string>
   <string name="close">Close</string>
+
+  <!-- Strings related to workout -->
+  <string name="workout_title_label">Workout Name:</string>
+  <string name="workout_body_label">Workout Details:</string>
 
   <!-- Strings related to register -->
   <string name="prompt_email">Email</string>
