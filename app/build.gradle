@@ -8,19 +8,17 @@ def urlPropertiesFile = rootProject.file("url.properties")
 def urlProperties = new Properties()
 urlProperties.load(new FileInputStream(urlPropertiesFile))
 
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
 android {
   signingConfigs {
-    debug {
-      storeFile file('C:\\Users\\LoweM\\gainz.jks')
-      storePassword storepass
-      keyPassword keypass
-      keyAlias 'key0'
-    }
-    main {
-      storeFile file('C:\\Users\\LoweM\\gainz.jks')
-      storePassword storepass
-      keyPassword keypass
-      keyAlias 'key0'
+    development {
+      keyAlias keystoreProperties['keyAlias']
+      keyPassword keystoreProperties['keyPassword']
+      storeFile file(keystoreProperties['storeFile'])
+      storePassword keystoreProperties['storePassword']
     }
   }
   compileSdkVersion 30
@@ -34,11 +32,9 @@ android {
   defaultConfig {
     applicationId "com.team10.android.gainz"
     minSdkVersion 28
-    targetSdkVersion 30
     versionCode 1
     versionName "1.0"
     testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    signingConfig signingConfigs.main
   }
 
   buildTypes {
@@ -46,6 +42,7 @@ android {
       minifyEnabled false
       proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
       buildConfigField "String", "API_URL", "\"https://afternoon-dawn-65870.herokuapp.com/\""
+      signingConfig signingConfigs.development
     }
 
     debug {
